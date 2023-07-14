@@ -17,10 +17,10 @@ export function SignInButton() {
       <Link href={`/dashboard`}>
         <Image 
           src={session.user?.image ?? '/meman.jpg'}
-          // src={'/meman.jpg'}
-          width={32}
-          height={32}
+          width={50}
+          height={50}
           alt="Your name"
+          className="rounded-full"
         />
       </Link>
     )
