@@ -1,4 +1,5 @@
 import AuthProvider from './AuthProvider'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -21,9 +22,10 @@ export default function RootLayout({
   return (
   <AuthProvider>
     <html lang="en">
-      <body className={inter.className}>
+      <body className='flex flex-col min-h-screen font-inter'>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   </AuthProvider>

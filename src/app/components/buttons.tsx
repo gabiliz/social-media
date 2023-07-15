@@ -29,5 +29,5 @@ export function SignInButton() {
 }
 
 export function SignOutButton() {
-  return <button onClick={() => signOut()}>Sign Out</button>
+  return <button className="inline-block rounded-lg px-2 py-1 text-slate-700 hover:text-slate-900 hover:bg-slate-100" onClick={() => signOut()}>Sign Out</button>
 }
