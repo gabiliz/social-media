@@ -11,7 +11,8 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
+  const server = process.env.SERVER;
+  const posts: Post[] = await fetch(`${server}/api/content`).then(
     (res) => res.json()
   );
 
@@ -21,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
+  const server = process.env.SERVER;
+  const posts: Post[] = await fetch(`${server}/api/content`).then(
     (res) => res.json()
   );
   const post = posts.find((post) => post.slug === params.slug)!;

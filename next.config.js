@@ -9,7 +9,10 @@ const nextConfig = {
         pathname: '/u/**',
       }
     ]
-  }
+  },
+  env: {
+    SERVER: process.env.SERVER,
+  },
 }
 
 module.exports = nextConfig
