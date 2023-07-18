@@ -3,7 +3,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
 import { useEffect, useRef, useState } from "react";
 
 export function SignInButton() {
@@ -39,7 +39,7 @@ export function SignInButton() {
             alt="Your name"
             className="rounded-full"
           />
-          <ChevronDownIcon className="h-6 w-6 ml-2" />
+          {isOpen ? <ChevronUpIcon className="h-6 w-6 ml-2" /> : <ChevronDownIcon className="h-6 w-6 ml-2" /> }
         </button>
         {isOpen && (
           <div className="absolute z-10 mt-2 bg-white shadow-lg divide-y divide-gray-100 rounded-lg ">
