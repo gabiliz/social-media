@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
+import { FunctionComponent } from 'react';
 
 type Post = {
 	title: string;
@@ -7,7 +8,11 @@ type Post = {
 	slug: string;
 };
 
-export default async function Blog() {
+type Props = {
+	params: { slug: string };
+};
+
+const Blog: FunctionComponent<Props> = async () => {
   const server = process.env.SERVER;
 	const posts: Post[] = await fetch(`${server}/api/content`).then(
 		(res) => res.json()
@@ -30,3 +35,5 @@ export default async function Blog() {
     </div>
   );
 }
+
+export default Blog;
