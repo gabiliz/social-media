@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 
 interface Props {
   id: string;
@@ -9,14 +10,17 @@ interface Props {
 
 export default function UserCard({ id, name, age, image }: Props) {
   return (
-    <div>
+    <div className='border p-4 rounded-md'>
       <img
+        className="rounded-md w-48 h-48"
         src={image ?? '/mememan.webp'}
         alt={`${name}'s profile`}
       />
-      <div>
-        <h3>
-          <Link href={`/users/${id}`}>{name}</Link>
+      <div className='ml-2'>
+        <h3 className='mt-2 text-xl'>
+          <Link className='flex items-center' href={`/users/${id}`}>{name}
+            <ArrowTopRightOnSquareIcon className="h-3 w-3 ml-2 stroke-gray-400" />
+          </Link>
         </h3>
         <p>Age: {age}</p>
       </div>
