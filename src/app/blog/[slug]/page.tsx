@@ -1,32 +1,34 @@
-export const revalidate = 420;
+import { FC, FunctionComponent } from 'react';
 
-interface Post {
-  title: string;
-  content: string;
-  slug: string;
-}
+type Post = {
+	title: string;
+	content: string;
+	slug: string;
+};
 
-interface Props {
-  params: { slug: string };
-}
+type Props = {
+	params: { slug: string };
+};
 
-export async function generateStaticParams() {
+// export const generateStaticParams = async () => {
+// 	const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
+// 		(res) => res.json()
+// 	);
+
+// 	return {
+// 		paths: posts.map((post) => ({
+// 			slug: post.slug,
+// 		})),
+// 	};
+// };
+
+const BlogPostPage: FunctionComponent<Props> = async ({ params }) => {
   const server = process.env.SERVER;
-  const posts: Post[] = await fetch(`${server}/api/content`).then(
-    (res) => res.json()
-  );
+	const posts: Post[] = await fetch(`${server}/api/content`).then(
+		(res) => res.json()
+	);
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
-export default async function BlogPostPage({ params }: Props) {
-  const server = process.env.SERVER;
-  const posts: Post[] = await fetch(`${server}/api/content`).then(
-    (res) => res.json()
-  );
-  const post = posts.find((post) => post.slug === params.slug)!;
+	const post = posts.find((post) => post.slug === params.slug)!;
 
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-10 lg:pt-24'>
@@ -35,3 +37,5 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   )
 }
+
+export default BlogPostPage;
