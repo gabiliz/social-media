@@ -4,11 +4,6 @@ import Image from 'next/image'
 import { authOptions } from './api/auth/[...nextauth]/route';
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    redirect('api/auth/signin');
-  }
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-10 text-center lg:pt-32'>
       <h1 className='mx-auto max-w-4xl font-display text-5xl font-semibold tracking-tight text-slate-900 sm:text-7xl'>Unlock <span className='relative whitespace-nowrap text-purple-700'>the power</span> of connection.</h1>

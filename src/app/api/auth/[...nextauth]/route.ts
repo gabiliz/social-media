@@ -18,12 +18,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!
     }),
   ],
-  callbacks: {
-    async signIn({ user }) {
-      // block signin if necessary
-      return true;
-    }
-  },
 };
 
 const handler = NextAuth(authOptions);

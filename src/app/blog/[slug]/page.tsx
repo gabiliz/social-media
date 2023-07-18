@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 420;
 
 interface Post {
   title: string;
@@ -10,7 +10,7 @@ interface Props {
   params: { slug: string };
 }
 
-export async function getStaticProps() {
+export async function generateStaticParams() {
   const server = process.env.SERVER;
   const posts: Post[] = await fetch(`${server}/api/content`).then(
     (res) => res.json()
