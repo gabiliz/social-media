@@ -8,7 +8,8 @@ const nextConfig = {
         port: '',
         pathname: '/u/**',
       }
-    ]
+    ],
+    domains: ['cdn.sanity.io', 'pbs.twimg.com', 'img.quizur.com']
   },
   env: {
     SERVER: process.env.SERVER,
