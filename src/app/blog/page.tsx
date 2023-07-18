@@ -1,3 +1,5 @@
+"use client"
+
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
 import { FunctionComponent, useEffect, useState } from 'react';
