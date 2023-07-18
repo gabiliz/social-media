@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
 type Post = {
 	title: string;
@@ -14,9 +14,16 @@ type Props = {
 
 const Blog: FunctionComponent<Props> = async () => {
   const server = process.env.SERVER;
-	const posts: Post[] = await fetch(`${server}/api/content`).then(
-		(res) => res.json()
-	);
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postsData = await fetch(`${server}/api/content`).then((res) => res.json());
+      setPosts(postsData);
+    };
+    fetchPosts();
+  }, []);
+
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-10 lg:pt-24'>
       <ul className='divide-y'>
