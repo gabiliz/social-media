@@ -4,15 +4,25 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function SignInButton() {
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession();
-
+  const ref = useRef<HTMLDivElement | null>(null);
+  
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+  }, [ref]);
 
   if (status === "loading") {
     return <>...</>;
@@ -20,7 +30,7 @@ export function SignInButton() {
 
   if (status === "authenticated") {
     return (
-      <div>
+      <div ref={ref}>
         <button className="flex items-center" onClick={toggleDropdown}>
           <Image 
             src={session.user?.image ?? '/meman.jpg'}
