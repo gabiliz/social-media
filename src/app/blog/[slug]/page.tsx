@@ -1,5 +1,3 @@
-export const revalidate = 420;
-
 interface Post {
   title: string;
   content: string;
