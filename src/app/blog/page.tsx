@@ -10,7 +10,7 @@ export default async function Blog() {
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-10 lg:pt-24'>
       <ul className='divide-y'>
         {posts.map((post: any) => (
-          <div className='p-8'>
+          <div className='p-8' key={post.slug}>
             <li className='text-2xl' key={post.slug}>
               <Link className='flex items-center' href={`/blog/${post.slug}`}>
                 <p className='text-gray-800'>{post.title}</p>

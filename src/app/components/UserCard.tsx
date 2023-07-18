@@ -13,7 +13,9 @@ export default function UserCard({ id, name, age, image }: Props) {
   return (
     <div className='border p-4 rounded-md'>
       <Image
-        className="rounded-md w-48 h-48"
+        className="rounded-md"
+        width={192}
+        height={192}
         src={image ?? '/mememan.webp'}
         alt={`${name}'s profile`}
       />
