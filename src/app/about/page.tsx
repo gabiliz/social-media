@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -15,42 +16,42 @@ export default async function About() {
 				<div className="grid grid-cols-3 gap-8">
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Mario.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Mario.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Mario</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">CEO</span>
 						</div>
 					</div>
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Luigi.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Luigi.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Luigi</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">CEO</span>
 						</div>
 					</div>
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Peach.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Peach.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Peach</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">CTO</span>
 						</div>
 					</div>
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Yoshi.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Yoshi.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Yoshi</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
 						</div>
 					</div>
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Donkey-Kong.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Donkey-Kong.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Donkey Kong</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">Developer</span>
 						</div>
 					</div>
 					<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 						<div className="flex flex-col items-center py-10">
-								<img className="w-50 h-50 mb-3 rounded-3xl" src="/Bowser.jpg" alt="Mario image"/>
+								<Image className="w-50 h-50 mb-3 rounded-3xl" src="/Bowser.jpg" alt="Mario image"/>
 								<h5 className="mb-1 text-xl font-medium text-gray-900">Bowser</h5>
 								<span className="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
 						</div>

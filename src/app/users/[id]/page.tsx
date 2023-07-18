@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { prisma } from '../../../../lib/prisma';
 import FollowButton from '@/app/components/FollowButton';
+import Image from 'next/image';
 
 interface Props {
   params: {
@@ -21,7 +22,7 @@ export default async function UserProfile({ params }: Props) {
     <div>
       <h1>{name}</h1>
 
-      <img
+      <Image
         width={300}
         src={image ?? '/mememan.webp'}
         alt={`${name}'s profile`}

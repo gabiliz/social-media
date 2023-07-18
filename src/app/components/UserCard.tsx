@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image';
 
 interface Props {
   id: string;
@@ -11,7 +12,7 @@ interface Props {
 export default function UserCard({ id, name, age, image }: Props) {
   return (
     <div className='border p-4 rounded-md'>
-      <img
+      <Image
         className="rounded-md w-48 h-48"
         src={image ?? '/mememan.webp'}
         alt={`${name}'s profile`}
