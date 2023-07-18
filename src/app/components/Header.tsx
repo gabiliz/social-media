@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SignInButton, SignOutButton } from "./buttons";
+import { SignInButton } from "./buttons";
 import AuthCheck from "./AuthCheck";
 
 export default function Header () {
@@ -25,9 +25,6 @@ export default function Header () {
 					</div>
 					<div className="flex items-center gap-x-5 md:gap-x-8">
 						<SignInButton />
-						<AuthCheck>
-							<SignOutButton />
-						</AuthCheck>
 					</div>
 
 				</nav>
