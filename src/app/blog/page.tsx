@@ -4,7 +4,7 @@ import { FunctionComponent } from 'react';
 
 type Post = {
 	title: string;
-	description: string;
+	content: string;
 	slug: string;
 };
 
