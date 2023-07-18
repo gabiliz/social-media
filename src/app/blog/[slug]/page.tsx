@@ -10,7 +10,7 @@ interface Props {
   params: { slug: string };
 }
 
-export async function generateStaticParams() {
+export async function getStaticProps() {
   const server = process.env.SERVER;
   const posts: Post[] = await fetch(`${server}/api/content`).then(
     (res) => res.json()
