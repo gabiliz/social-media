@@ -1,7 +1,7 @@
 # PeakNet
 ![image](https://github.com/gabiliz/social-media/assets/54365855/a7d8fa09-eb97-4076-9222-b5c403ab815d)
 
-this project was made following the Next.js 13 full corse made by fireship
+this project was made following the Next.js 13 full course made by fireship
 
 i did some changes and added some new things to work as i wanted to
 
